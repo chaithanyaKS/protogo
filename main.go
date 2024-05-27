@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	tcpListener, err := net.Listen("tcp", ":443")
+	tcpListener, err := net.Listen("tcp", ":8080")
 
 	if err != nil {
 		fmt.Println("listening error", err)
@@ -22,7 +22,7 @@ func main() {
 			fmt.Println("Error while accepting connection", conn)
 			return
 		}
-		go servers.HandleConnection(conn)
+		go servers.HandlePrimeConnection(conn)
 
 	}
 

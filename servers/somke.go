@@ -6,7 +6,7 @@ import (
 	"net"
 )
 
-func HandleConnection(c net.Conn) {
+func HandlePingConnection(c net.Conn) {
 	fmt.Println("Listening on ", c.RemoteAddr().String())
 	buffer := make([]byte, 2048)
 	defer c.Close()
